@@ -40,7 +40,7 @@ def main():
     # On regarde si on a un 1 ou un 6, auquel cas on lance le dernier dés dans l'espoir de faire un 2 (1/6 chance)
     if (1 in lancer) or (6 in lancer):
         dernier_lancer = lancer_un_des()
-        if lancer_un_des == 2:
+        if dernier_lancer == 2:
             return 1
         else:
             return 0
@@ -69,7 +69,11 @@ if __name__ == '__main__':
     # print(check_for_two([1,4]))
     # print(check_for_win([2,6]))
     result =  []
-    for i in range(10):
+    for i in range(100000):
         result.append(main())
     
     print(sum(result))
+
+""" 
+On trouve 277870 avec 1 000 000 de lancés.
+"""
